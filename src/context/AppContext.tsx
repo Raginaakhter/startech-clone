@@ -124,8 +124,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       if (exists) {
         return prev.filter((item) => item.id !== product.id);
       }
-      if (prev.length >= 3) {
-        alert("You can compare up to 3 products at a time!");
+      if (prev.length >= 4) {
+        alert("You can add Max 4 Products to compare!");
         return prev;
       }
       return [...prev, product];

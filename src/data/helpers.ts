@@ -1,14 +1,18 @@
 import { featuredProducts } from "@/data/products";
 
-// Generate more dummy products for detail pages
-const allProducts = [
-  ...featuredProducts,
-  ...featuredProducts.map((p, i) => ({
+// Generate more dummy products for detail pages — enough for pagination
+const suffixes = ["", " (V2)", " Plus", " Pro", " Lite", " Max", " SE", " Ultra"];
+const allProducts = suffixes.flatMap((suffix, si) =>
+  featuredProducts.map((p, i) => ({
     ...p,
-    id: p.id + 100,
-    name: p.name + " (V2)",
-  })),
-];
+    id: p.id + si * 100,
+    name: p.name + suffix,
+    price: Math.round(p.price * (0.85 + si * 0.05)),
+    oldPrice: p.oldPrice ? Math.round(p.oldPrice * (0.85 + si * 0.05)) : null,
+    href: si === 0 ? p.href : p.href + `-${suffix.trim().toLowerCase().replace(/[() ]/g, "")}`,
+  }))
+);
+
 
 import { navigationData } from "@/data/navigation";
 
@@ -58,6 +62,21 @@ export function getProductsByCategory(category) {
   if (catName.includes("headset") || catName.includes("headphone")) keywords.push("headset", "headphone");
   if (catName.includes("mouse")) keywords.push("mouse");
   if (catName.includes("supply") || catName.includes("cv550")) keywords.push("supply", "corsair", "cv550");
+  if (catName.includes("casing")) keywords.push("casing", "mid tower", "tower", "nx410", "ch510", "h5 flow", "td500");
+  if (catName.includes("motherboard")) keywords.push("motherboard", "b760m", "b660m", "z790");
+  if (catName.includes("graphics") || catName.includes("gpu")) keywords.push("graphics card", "rtx", "geforce", "radeon");
+  if (catName.includes("ram") || catName.includes("memory")) keywords.push("ram", "ddr5", "ddr4", "vengeance", "fury beast", "trident");
+  if (catName.includes("ssd")) keywords.push("ssd", "nvme", "990 pro", "sn580", "nv2");
+  if (catName.includes("keyboard")) keywords.push("keyboard", "mechanical", "mk858", "rk84", "k380");
+  if (catName.includes("router")) keywords.push("router", "archer", "wi-fi", "wifi");
+  if (catName.includes("switch") || catName.includes("network switch")) keywords.push("switch", "sg1016", "gs108", "fs1010");
+  if (catName.includes("smart watch") || catName.includes("watch")) keywords.push("smart watch", "watch", "amazfit", "redmi watch");
+  if (catName.includes("speaker")) keywords.push("speaker", "flip 6", "r1280t", "bookshelf");
+  if (catName.includes("webcam")) keywords.push("webcam", "c920");
+  if (catName.includes("cooler") || catName.includes("cpu cooler")) keywords.push("cooler", "ak620", "h150i");
+  if (catName.includes("processor")) keywords.push("processor", "ryzen", "core i5", "core i7");
+  if (catName.includes("tablet") || catName.includes("ipad")) keywords.push("tablet", "ipad", "tab s9");
+  if (catName.includes("hard disk") || catName.includes("hdd")) keywords.push("hdd", "hard disk");
 
   const matched = allProducts.filter((p) => {
     const pName = p.name.toLowerCase();
