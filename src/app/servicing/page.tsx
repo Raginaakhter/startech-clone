@@ -438,7 +438,7 @@ export default function ServicingPage() {
               className="object-cover object-center transition-all duration-700"
             />
 
-            {/* Text Overlay Content */}
+            {/* Text  Content */}
             <div className="absolute inset-y-0 left-0 z-15 flex flex-col justify-center px-6 sm:px-12 md:px-16 max-w-[85%] md:max-w-[65%] text-white">
               {currentSlide.badge && (
                 <span className={`inline-block self-start text-[10px] sm:text-[11px] font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider text-white ${currentSlide.badgeBg}`}>
@@ -452,7 +452,7 @@ export default function ServicingPage() {
                 {currentSlide.subtitle}
               </p>
               <div className="flex flex-wrap gap-2.5">
-                <a 
+                <a
                   href="#service-form"
                   onClick={(e) => {
                     e.preventDefault();
@@ -462,8 +462,8 @@ export default function ServicingPage() {
                 >
                   সার্ভিস বুক করুন
                 </a>
-                <a 
-                  href="tel:16793" 
+                <a
+                  href="tel:16793"
                   className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-[11px] sm:text-[12px] px-4 py-2 rounded-lg transition-all backdrop-blur-xs flex items-center gap-2 cursor-pointer"
                 >
                   <svg className="w-3.5 h-3.5 text-[#ef4a23]" fill="currentColor" viewBox="0 0 20 20">
@@ -496,9 +496,8 @@ export default function ServicingPage() {
                 <button
                   key={idx}
                   onClick={() => setBannerIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                    bannerIndex === idx ? "w-6 bg-[#ef4a23]" : "w-2.5 bg-white/70 hover:bg-white"
-                  }`}
+                  className={`h-2.5 rounded-full transition-all cursor-pointer ${bannerIndex === idx ? "w-6 bg-[#ef4a23]" : "w-2.5 bg-white/70 hover:bg-white"
+                    }`}
                 />
               ))}
             </div>
@@ -785,11 +784,10 @@ export default function ServicingPage() {
               </div>
 
               <div className="flex items-center justify-between border-t border-[#f1f5f9] pt-3 mt-2">
-                <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded ${
-                  center.dayOff === "Open Everyday"
+                <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded ${center.dayOff === "Open Everyday"
                     ? "bg-[#f0fdf4] text-[#16a34a]"
                     : "bg-[#f1f5f9] text-[#64748b]"
-                }`}>
+                  }`}>
                   {center.dayOff}
                 </span>
 
