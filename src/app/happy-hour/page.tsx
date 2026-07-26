@@ -181,7 +181,7 @@ export default function HappyHourPage() {
             fontWeight: 500,
             lineHeight: "1.6",
           }}>
-            আপনার পছন্দের Laptop, Desktop, Monitor, Smart Watch, Keyboard, Mouse, Headphone-সহ প্রযুক্তি পণ্যে পাবেন নিশ্চিত মূল্যছাড়! এবং বিকাশ অনলাইন পেমেন্ট পাবেন সর্বোচ্চ ১০০০ টাকা পর্যন্ত ইনস্ট্যান্ট ক্যাশব্যাক।
+            আপনার পছন্দের Laptop, Desktop, Monitor, Smart Watch, Keyboard, Mouse, headphone-সহ প্রযুক্তি পণ্যে পাবেন নিশ্চিত মূল্যছাড়! এবং বিকাশ অনলাইন পেমেন্ট পাবেন সর্বোচ্চ ১০০০ টাকা পর্যন্ত ইনস্ট্যান্ট ক্যাশব্যাক।
           </p>
 
           {/* Countdown Clock */}
