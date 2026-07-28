@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 // Utility to generate structured mock specs for comparison
 function getProductSpecs(name: string) {
   const n = name.toLowerCase();
-  
+
   if (n.includes("air fryer") || n.includes("fryer")) {
     const isPigeon = n.includes("pigeon");
     return {
@@ -22,7 +22,7 @@ function getProductSpecs(name: string) {
         { label: "Cooking function", value: isPigeon ? "Air Fry, Roast, Bake, Grill & Reheat" : "12 cooking methods" },
         { label: "Air Frying Technology", value: isPigeon ? "N/A" : "RapidAir technology" },
         { label: "Temperature Range", value: isPigeon ? "Up to 200°C" : "200°C" },
-        { label: "Timer", value: "Yes" },
+        { label: "Timerr", value: "Yes" },
         { label: "App Control", value: isPigeon ? "N/A" : "HomeID" }
       ].filter(s => s.value !== "N/A"),
       "Power Supply": [
@@ -137,7 +137,7 @@ export default function ComparePage() {
 
       <div className="max-w-[1140px] mx-auto px-4 mt-6">
         <div className="bg-white p-6 rounded shadow-sm border border-gray-200">
-          
+
           {/* Header */}
           <div className="flex justify-between items-start mb-6 border-b border-gray-200 pb-4">
             <div>
@@ -268,8 +268,8 @@ export default function ComparePage() {
                     <React.Fragment key={sIdx}>
                       {/* Section Header */}
                       <tr className="bg-[#f5f6fb]">
-                        <td 
-                          colSpan={5} 
+                        <td
+                          colSpan={5}
                           className="p-3 text-[16px] text-[#3749bb] font-medium cursor-pointer"
                           onClick={() => toggleSection(section)}
                         >
